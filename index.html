@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erickson Homes | Premier Custom Builder NC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGold: '#FDB913',
+                        brandBlue: '#3EA8E0',
+                        brandDark: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body { margin: 0; padding: 0; overflow-x: hidden; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+        .nav-solid { background: #000000; }
+        .hero-gradient { background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%); }
+        .text-balance { text-wrap: balance; }
+        .spa-page { display: none; opacity: 0; transition: opacity 0.4s ease-in-out; }
+        .spa-page.active { display: block; opacity: 1; }
+        
+        #mobile-menu { transition: transform 0.3s ease-in-out; transform: translateX(100%); }
+        #mobile-menu.open { transform: translateX(0); }
+
+        /* Lightbox Modal Style */
+        #lightbox-modal { transition: opacity 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-stone-900 selection:bg-brandGold/30">
+
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4 md:p-12 cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white hover:text-brandGold transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-full max-h-full object-contain shadow-2xl rounded-sm">
+    </div>
+
+    <nav class="absolute top-0 left-0 w-full z-50 nav-solid border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-24 flex items-center justify-between">
+            <a href="#home" class="flex items-center h-full">
+                <img src="logo_cropped.jpg" alt="Erickson Homes Logo" class="h-10 md:h-20 w-auto object-contain mix-blend-screen">
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-10 text-[16px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                <a href="#home" class="nav-link hover:text-brandGold transition-colors">Home</a>
+                <a href="#team" class="nav-link hover:text-brandGold transition-colors">Our Team</a>
+                <a href="#pricing" class="nav-link hover:text-brandGold transition-colors">Pricing</a>
+            </div>
+
+            <button id="menu-toggle" class="md:hidden text-white p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-brandDark z-[60] flex flex-col items-center justify-center space-y-8 md:hidden">
+        <button id="menu-close" class="absolute top-6 right-6 text-white" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="#home" class="text-white text-2xl font-light tracking-widest uppercase serif">Home</a>
+        <a href="#team" class="text-white text-2xl font-light tracking-widest uppercase serif">Our Team</a>
+        <a href="#pricing" class="text-white text-2xl font-semibold uppercase serif">Pricing</a>
+        <a href="tel:9106242987" class="bg-brandGold text-brandDark px-10 py-4 rounded-sm font-bold uppercase tracking-widest">Contact Us</a>
+    </div>
+
+    <main id="home" class="spa-page active">
+        <header class="relative h-[40vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 hero-gradient z-10"></div>
+            <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
+                <source src="ERICKSON HOMES SLIDESHOW VIDEO.mp4" type="video/mp4">
+            </video>
+            
+            <div class="relative z-20 text-center text-white px-6 max-w-4xl mt-12 md:mt-12">
+                <span class="inline-block uppercase tracking-[0.3em] md:tracking-[0.5em] text-[9px] md:text-[14px] mb-4 md:mb-6 text-brandGold font-bold border-b border-white/20 pb-2">Linden, North Carolina</span>
+                <h1 class="text-3xl md:text-8xl mb-6 md:mb-8 leading-tight italic text-balance uppercase tracking-tight font-medium">Build on <br>your land.</h1>
+                <p class="inline-block uppercase tracking-[0.3em] hidden md:block text-xl font-light mb-10 opacity-90 tracking-wide max-w-2xl mx-auto italic">CUSTOM residental buildings</p>
+                <div class="flex flex-row gap-3 md:gap-4 justify-center">
+                    <a href="#team" class="bg-brandGold text-brandDark px-6 py-3 md:px-8 md:py-4 text-[10px] md:text-[11px] uppercase tracking-widest font-bold hover:bg-white transition-all shadow-lg">Meet The Team</a>
+                    <a href="#pricing" class="border border-brandBlue text-brandBlue backdrop-blur-sm px-6 py-3 md:px-8 md:py-4 text-[10px] md:text-[11px] uppercase tracking-widest font-bold hover:bg-brandBlue hover:text-white transition-all shadow-lg">Pricing Model</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="py-16 md:py-32 max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-center">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <h5 class="text-3xl md:text-6xl my-4 md:my-6 leading-[1.1] serif italic">Welcome, Neighbor!</h5>
+                    <p class="text-stone-600 leading-relaxed text-sm md:text-lg mb-8">
+                        Erickson Homes is a local custom home builder based in Linden, North Carolina, specializing in building custom homes on your land with clear, upfront pricing.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed text-sm md:text-lg mb-8 font-medium italic">If you’re searching for a cost-plus custom home builder, you’re in the right place.</p>
+<div class="space-y-2 border-l-[6px] border-brandGold pl-8 mt-14 py-2">
+    <p class="text-[10px] text-stone-400 font-black uppercase tracking-[0.4em]">Service Area</p>
+    <p class="text-stone-900 text-lg md:text-2xl leading-tight font-semibold serif italic tracking-tight">
+        Cumberland, Harnett, Moore, <br class="hidden md:block"> Hoke & Sampson Counties
+    </p>
+</div>
+                </div>
+                <div class="lg:col-span-7 relative group order-1 lg:order-2">
+                    <div class="absolute -inset-2 md:-inset-4 bg-stone-100 rounded-sm -z-10 transition-transform group-hover:scale-105"></div>
+                    <img src="blueprint_edited.jpg" alt="Blueprints" class="shadow-xl w-full object-cover aspect-video lg:aspect-[4/3] cursor-zoom-in" onclick="openLightbox(this.src)">
+                    <div class="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-brandDark text-white p-4 md:p-10 shadow-2xl border-t-4 border-brandBlue border-b-4 border-brandGold">
+                        <p class="text-xl md:text-4xl font-light serif mb-1 italic">Fixed Fee</p>
+                        <div class="flex items-end gap-2">
+                            <span class="text-3xl md:text-6xl font-bold text-brandGold">25%</span>
+                            <span class="text-[8px] md:text-[10px] uppercase tracking-tighter mb-1 md:mb-2 opacity-60">Over total <br>cost</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="team" class="spa-page pt-20">
+        <section class="bg-white py-16 md:py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12 md:mb-20">
+                    <h2 class="text-4xl md:text-5xl serif mb-4 italic font-medium">Meet Our Team of Professionals</h2>
+                    <div class="w-16 md:w-24 h-1 bg-brandBlue mx-auto"></div>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16">
+                    <div class="group text-center md:text-left">
+                        <div class="relative overflow-hidden mb-6 bg-stone-100 aspect-[3/4] border-b-4 border-brandGold">
+                            <img src="DrewHEADSHOT.png" alt="Andrew Erickson" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                        </div>
+                        <h3 class="text-xl md:text-2xl mb-1 italic serif font-medium">Andrew "Drew" Erickson</h3>
+                        <p class="text-[10px] text-stone-400 uppercase tracking-[0.2em] font-bold">Owner & General Contractor</p>
+                    </div>
+                    <div class="group text-center md:text-left">
+                        <div class="relative overflow-hidden mb-6 bg-stone-100 aspect-[3/4] border-b-4 border-brandGold">
+                            <img src="Samantha1.jpeg" alt="Samantha" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                        </div>
+                        <h3 class="text-xl md:text-2xl mb-1 italic serif font-medium">Samantha Barner</h3>
+                        <p class="text-[10px] text-stone-400 uppercase tracking-[0.2em] font-bold">Design & Operations</p>
+                    </div>
+                    <div class="group text-center md:text-left">
+                        <div class="relative overflow-hidden mb-6 bg-stone-100 aspect-[3/4] border-b-4 border-brandGold">
+                            <img src="Kristina1.png" alt="Kristina" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                        </div>
+                        <h3 class="text-xl md:text-2xl mb-1 italic serif font-medium">Kristina Barner</h3>
+                        <p class="text-[10px] text-stone-400 uppercase tracking-[0.2em] font-bold">Marketing & Strategy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <main id="pricing" class="spa-page pt-20">
+    <section class="bg-white py-16 md:py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <h2 class="text-4xl md:text-6xl serif italic mb-8 leading-tight font-medium">Pricing</h2>
+                    <p class="text-stone-600 leading-relaxed text-lg mb-6">
+                        We believe in total financial transparency. You pay exactly what we pay for materials and labor. 
+                    </p>
+                    <p class="text-stone-600 leading-relaxed">
+                        Erickson Homes charges a flat <span class="text-brandDark font-bold underline decoration-brandGold underline-offset-4">25% Management Fee</span> to provide full-time project management, scheduling top-tier subcontractors, and professional expertise to ensure your home is built to the highest standard.
+                    </p>
+                </div>
+                <div class="space-y-8 bg-stone-50 p-8 border border-stone-100 rounded-sm">
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-4">Example: Custom Home</h3>
+                        <div class="flex justify-between border-b border-stone-200 pb-2">
+                            <span>Costs</span><span>$250,000</span>
+                        </div>
+                        <div class="flex justify-between pt-2 font-bold text-brandBlue">
+                            <span>Total w/ Fee</span><span>$312,500</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-4">Example: Detached Garage</h3>
+                        <div class="flex justify-between border-b border-stone-200 pb-2">
+                            <span>Costs</span><span>$40,000</span>
+                        </div>
+                        <div class="flex justify-between pt-2 font-bold text-brandBlue">
+                            <span>Total w/ Fee</span><span>$50,000</span>
+                        </div>
+                    </div>
+                    <p class="italic text-stone-400 text-[10px]">*Construction pricing only. Land acquisition not included.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 border-t border-stone-100 pt-16 mb-20">
+                <div>
+                    <h3 class="text-2xl brand-font mb-6 text-brandBlue">Affordable Home Design</h3>
+                    <p class="text-stone-600 mb-6">We work with an experienced home designer to keep the design phase simple and affordable, providing professional plans without high architectural fees.</p>
+                    <ul class="space-y-3 text-stone-700 font-medium">
+                        <li class="flex items-center gap-3">
+                            <span class="h-1.5 w-1.5 bg-brandGold rounded-full"></span>
+                            $500 for house plans 2,500 sq. ft. or less
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="h-1.5 w-1.5 bg-brandGold rounded-full"></span>
+                            $0.35 per additional sq. foot (over 2,500)
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-brandBlue text-white p-8 rounded-sm">
+                    <h3 class="text-xl font-bold mb-4">Choose Your Home Site First</h3>
+                    <p class="text-blue-50 text-sm leading-relaxed mb-6">
+                        The size, shape, slope, and contour of your land directly affect your home’s layout, foundation, and cost. We strongly recommend choosing your location before purchasing blueprints.
+                    </p>
+                    <p class="text-sm font-bold border-l-2 border-brandGold pl-4">
+                        We’ll meet you on your property anywhere in Cumberland, Harnett, or North West Sampson County to help determine the best placement.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-stone-900 text-white py-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+            <div class="col-span-2">
+                <h2 class="text-3xl brand-font mb-8 text-brandGold">More Than a House—We Build Estates</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <ul class="space-y-2 text-stone-300 text-sm">
+                        <li>• Pools & Pool Houses</li>
+                        <li>• Detached Garages</li>
+                        <li>• Guest Houses</li>
+                    </ul>
+                    <ul class="space-y-2 text-stone-300 text-sm">
+                        <li>• Fences & Retaining Walls</li>
+                        <li>• Docks & Electric Gates</li>
+                        <li>• Property Improvements</li>
+                    </ul>
+                </div>
+                <p class="mt-8 text-stone-400 italic text-sm">We handle it all under the same straightforward pricing model.</p>
+            </div>
+            <div class="border-l border-stone-700 pl-8">
+                <h3 class="text-xl brand-font mb-4">A Neighborly Approach</h3>
+                <p class="text-stone-400 text-sm leading-loose mb-6">
+                    Have subcontractors you already trust? No problem. As long as they are licensed and insured, we’re happy to coordinate with them.
+                </p>
+                <p class="text-stone-400 text-sm leading-loose">
+                    Building should be exciting, not stressful. We keep communication clear and pricing honest from day one.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl md:text-4xl serif italic text-center mb-16 font-medium">Craftsmanship at Every Stage</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="aspect-video overflow-hidden rounded-sm shadow-sm group">
+                    <img src="completehouse.JPEG" alt="Complete House" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+                <div class="aspect-video overflow-hidden rounded-sm shadow-sm group">
+                    <img src="fronthouse.jpeg" alt="fronthouse" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+                <div class="aspect-video overflow-hidden rounded-sm shadow-sm group">
+                    <img src="upperconstruc.jpg" alt="Progress" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+
+                <div class="aspect-video overflow-hidden rounded-sm shadow-sm group">
+                    <img src="deckconstruc.jpg" alt="Deck Construction" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+                <div class="aspect-video overflow-hidden rounded-sm shadow-sm group">
+                    <img src="construcfront.jpg" alt="fronthouse" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+                <div class="aspect-video overflow-hidden rounded-sm shadow-sm group bg-stone-50 flex items-center justify-center">
+                    <img src="houseconstruction.jpg" alt="Home Under Construction" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+
+                <div class="aspect-video overflow-hidden rounded-sm shadow-sm group">
+                    <img src="frontcolumns.jpeg" alt="fronthouse" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+
+                <div class="aspect-video overflow-hidden rounded-sm shadow-sm group">
+                    <img src="garage.JPG" alt="garage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+                <div class="aspect-video overflow-hidden rounded-sm shadow-sm group">
+                    <img src="deckconstruc.jpg" alt="column" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <footer class="bg-brandDark text-white py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="sm:col-span-2">
+                <img src="logo_cropped.jpg" alt="logo" class="h-10 w-auto object-contain mix-blend-screen">
+                <p class="text-brandBlue text-[10px] font-bold uppercase tracking-widest mt-6">NC License #100412</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4 uppercase text-[10px] tracking-widest text-brandGold">Contact Us</h5>
+                <div class="flex flex-col space-y-3 text-white/80 text-sm font-medium">
+                    <a href="tel:9106242987" class="hover:text-brandBlue transition-colors">910.624.2987</a>
+                    <a href="mailto:sales@ericksonhomesnc.com" class="hover:text-brandBlue transition-colors">sales@ericksonhomesnc.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navigate = () => {
+            const hash = window.location.hash.substring(1) || 'home';
+            const pages = document.querySelectorAll('.spa-page');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            pages.forEach(p => p.classList.toggle('active', p.id === hash));
+            navLinks.forEach(l => l.classList.toggle('text-brandGold', l.getAttribute('href') === `#${hash}`));
+            
+            document.getElementById('mobile-menu').classList.remove('open');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        const menu = document.getElementById('mobile-menu');
+        const toggleMenu = () => menu.classList.toggle('open');
+        document.getElementById('menu-toggle').onclick = toggleMenu;
+
+        const modal = document.getElementById('lightbox-modal');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        const openLightbox = (src) => {
+            lightboxImg.src = src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+            modal.classList.add('hidden');
+            lightboxImg.src = '';
+            document.body.style.overflow = ''; 
+        };
+
+        window.addEventListener('hashchange', navigate);
+        window.addEventListener('DOMContentLoaded', navigate);
+    </script>
+</body>
+</html>
